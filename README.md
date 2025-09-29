@@ -35,10 +35,36 @@ This repository serves as the definitive collection of Claude Code subagents - s
 
 ## Quick Start
 
+### Automated Setup (Recommended)
+
+1. **Prerequisites**: Ensure [Claude CLI](https://github.com/anthropics/claude-code) is installed
+2. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Super-Chain/awesome-claude-code-subagents
+   cd awesome-claude-code-subagents
+   ```
+3. **Make setup script executable**:
+   ```bash
+   chmod +x setup-agent.sh
+   ```
+4. **Install a subagent**:
+   ```bash
+   ./setup-agent.sh <category>/<agent-name>
+   
+   # Examples:
+   ./setup-agent.sh 03-infrastructure/aws-cloud-architect
+   ./setup-agent.sh 04-quality-security/endpoint-security-engineer
+   ```
+5. **Restart Claude CLI**:
+   ```
+
+### Manual Setup
+
 1. Browse categories to find the subagent you need
-2. Copy the subagent definition
-3. Use with Claude Code or integrate into your workflow
-4. Customize based on your project requirements
+2. Copy the subagent definition to `~/.claude/agents/`
+3. If the agent has MCP configuration, merge it with `~/.cursor/mcp.json`
+4. Restart Claude CLI to load the new agent
+5. Customize based on your project requirements
 
 
 ### ⚡️ Maintained by the [VoltAgent](https://github.com/voltagent/voltagent) open-source AI agent framework community.
@@ -95,6 +121,7 @@ Language-specific experts with deep framework knowledge.
 ### [03. Infrastructure](categories/03-infrastructure/)
 DevOps, cloud, and deployment specialists.
 
+- [**aws-cloud-architect**](categories/03-infrastructure/aws-cloud-architect.md) - AWS Cloud Solutions Architect
 - [**cloud-architect**](categories/03-infrastructure/cloud-architect.md) - AWS/GCP/Azure specialist
 - [**database-administrator**](categories/03-infrastructure/database-administrator.md) - Database management expert
 - [**deployment-engineer**](categories/03-infrastructure/deployment-engineer.md) - Deployment automation specialist
@@ -117,6 +144,7 @@ Testing, security, and code quality experts.
 - [**code-reviewer**](categories/04-quality-security/code-reviewer.md) - Code quality guardian
 - [**compliance-auditor**](categories/04-quality-security/compliance-auditor.md) - Regulatory compliance expert
 - [**debugger**](categories/04-quality-security/debugger.md) - Advanced debugging specialist
+- [**endpoint-security-engineer**](categories/04-quality-security/endpoint-security-engineer.md) - Endpoint security specialist
 - [**error-detective**](categories/04-quality-security/error-detective.md) - Error analysis and resolution expert
 - [**penetration-tester**](categories/04-quality-security/penetration-tester.md) - Ethical hacking specialist
 - [**performance-engineer**](categories/04-quality-security/performance-engineer.md) - Performance optimization expert
