@@ -114,44 +114,6 @@ print_info "Copying agent file..."
 cp "$AGENT_FILE" "$CLAUDE_AGENTS_DIR/"
 print_success "Agent file copied to $CLAUDE_AGENTS_DIR/$(basename "$AGENT_FILE")"
 
-# Handle MCP configuration if MCP file exists
-if [ -f "$MCP_FILE" ]; then
-    CURSOR_MCP_FILE="$HOME/.cursor/mcp.json"
-    
-    # Create .cursor directory if it doesn't exist
-    if [ ! -d "$HOME/.cursor" ]; then
-        print_info "Creating .cursor directory"
-        mkdir -p "$HOME/.cursor"
-    fi
-    
-    # Handle MCP configuration
-    if [ ! -f "$CURSOR_MCP_FILE" ]; then
-        print_info "Creating new MCP configuration file"
-        cp "$MCP_FILE" "$CURSOR_MCP_FILE"
-        print_success "MCP configuration created at $CURSOR_MCP_FILE"
-    else
-        print_info "Merging MCP configuration..."
-        
-        # Create a backup
-        cp "$CURSOR_MCP_FILE" "$CURSOR_MCP_FILE.backup"
-        print_info "Backup created at $CURSOR_MCP_FILE.backup"
-        
-        # Use jq to merge JSON files if available, otherwise manual merge
-        if command -v jq &> /dev/null; then
-            # Merge the mcpServers objects
-            jq -s '.[0] * .[1]' "$CURSOR_MCP_FILE" "$MCP_FILE" > "$CURSOR_MCP_FILE.tmp"
-            mv "$CURSOR_MCP_FILE.tmp" "$CURSOR_MCP_FILE"
-            print_success "MCP configuration merged successfully"
-        else
-            print_warning "jq not found. Please manually merge the MCP configuration from:"
-            print_info "  Source: $MCP_FILE"
-            print_info "  Target: $CURSOR_MCP_FILE"
-        fi
-    fi
-else
-    print_info "No MCP configuration file found for this agent"
-fi
-
 print_success "Agent '$AGENT_NAME' from category '$CATEGORY' setup completed!"
 print_info "Please restart Claude CLI to load the new agent:"
 print_info "  exit"

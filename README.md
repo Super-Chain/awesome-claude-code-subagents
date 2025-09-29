@@ -62,7 +62,10 @@ This repository serves as the definitive collection of Claude Code subagents - s
 
 1. Browse categories to find the subagent you need
 2. Copy the subagent definition to `~/.claude/agents/`
-3. If the agent has MCP configuration, merge it with `~/.cursor/mcp.json`
+3. If the agent requires MCP tools, add them using:
+   ```bash
+   claude mcp add --transport http aws <mcp_url> --scope user
+   ```
 4. Restart Claude CLI to load the new agent
 5. Customize based on your project requirements
 
