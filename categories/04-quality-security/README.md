@@ -46,11 +46,6 @@ Debugging expert solving the most complex issues. Masters debugging tools, techn
 
 **Use when:** Debugging complex issues, analyzing memory leaks, investigating race conditions, profiling applications, or solving intermittent bugs.
 
-### [**endpoint-security-engineer**](endpoint-security-engineer.md) - Endpoint security specialist
-Elite endpoint security engineer specializing in protecting enterprise endpoints across Windows, macOS, and Linux environments. Expert in EDR/NGAV platforms, threat detection engineering, security automation, and API integrations with major security platforms.
-
-**Use when:** Building EDR/NGAV solutions, creating threat detection rules, automating security workflows, integrating with security platforms like CrowdStrike or SentinelOne, or developing cross-platform endpoint protection.
-
 ### [**error-detective**](error-detective.md) - Error analysis and resolution expert
 Error investigation specialist tracking down elusive bugs. Expert in log analysis, error patterns, and systematic debugging. Turns cryptic errors into actionable solutions.
 
